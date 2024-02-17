@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<span name="navbar">
+    <a name="navbar-item" href="/">Home</a>
+    <a name="navbar-item" href="/logout">Log Out</a>
+</span>
+<br>
+    <div id="homepage-content">
+        <h1>Hello, {{ user.first_name }} {{ user.last_name }}</h1>
+        <div name="homepage-profile-info">
+            <h3 name="info-header">You Account Info</h3>
+            <p>First Name: {{ user.first_name }}</p>
+            <p>Last Name: {{ user.last_name }}</p>
+            <P>Username: {{ user.username }}</P>
+            <p>Email: {{ user.email }}</p>
+        </div>
+    </div>
+    <span name="homepage-actions">
+        <a name="action-button" href="{% url 'bank:edit-profile' user.id %}">Edit Profile</a>
+        <a name="action-button" href="/accounts">View Accounts</a>
+    </span>
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

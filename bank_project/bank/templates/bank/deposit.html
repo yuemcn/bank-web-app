@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/bank/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+</head>
+<body>
+    <span name="navbar">
+        <a name="navbar-item" href="/">Home</a>
+        <a name="navbar-item" href="/logout">Log Out</a>
+    </span>
+        <h1>Deposit</h1>
+    {% if account.is_active %}
+        <p>Hello World</p>
+    {% else %}
+        <p>You cannot perform transactions for non-active accounts.</p>
+    {% endif %}
+    <button onclick="history.back()">Back</button>
+</body>
+</html>

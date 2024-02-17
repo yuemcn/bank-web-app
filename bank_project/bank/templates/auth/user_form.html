@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/bank/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <span name="navbar">
+        <button name="navbar-item" onclick="location.href = '/';">Home</button>
+        <button name="navbar-item" onclick="location.href = '/logout';">Log Out</button>
+    </span>
+    <h1>Edit Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+        <button onclick="location.href='/';">Back</button>
+    </form>
+</body>
+</html>

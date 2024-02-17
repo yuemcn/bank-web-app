@@ -1,0 +1,77 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    font-weight: lighter;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    padding: 5px;
+}
+
+a[name="action-button"] {
+    margin-right: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+a[name="login-option"] {
+    font-size: small;
+}
+
+div[name="login-options"] {
+    margin-top: 20px;
+}
+
+h1, h3 {
+    font-weight: lighter;
+}
+
+h3[name="info-header"] {
+    padding-bottom: 5px;
+    border-bottom: solid;
+    border-width: 2px;
+}
+
+div[name="account-info"] {
+    margin-bottom: 30px;
+}
+
+div[name="account-block"] {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+table {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+}
+
+th {
+    padding-bottom: 10px;
+    text-align: left;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+td {
+    padding-top: 10px;
+    padding-right: 50px;
+}
+
+#homepage-content {
+    margin-bottom: 40px;
+}

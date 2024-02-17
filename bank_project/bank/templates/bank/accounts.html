@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/bank/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts</title>
+</head>
+<body>
+    <span name="navbar">
+        <a name="navbar-item" href="/">Home</a>
+        <a name="navbar-item" href="/logout">Log Out</a>
+    </span>
+        <h1>Accounts</h1>
+    <span>
+        <a name="action-button" href="create/">Create Account</a>
+        <a name="action-button" href="/accounts/transfer/">Transfer</a>    
+    </span>
+    {% if account_list %}
+        {% for account in account_list %}
+        <div name="account-block">
+            <div name="account-info">
+                <h3 name="info-header">Account Number: {{ account.id }}</h4>
+                <p>Type: {{ account.type }}</p>
+                <p>Status: {{ account.status }}</p>
+                <p>Balance: ${{ account.balance }}</p>
+            </div>
+            <span name="account-actions-list">
+                <a name="action-button" href="{% url 'bank:deposit-withdraw' account.id %}">Deposit/Withdraw</a>
+                <a name="action-button" href="{% url 'bank:transactions' account.id %}">View Transactions</a>
+            </span>    
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No accounts have been created</p>
+    {% endif %}
+</body>
+</html>

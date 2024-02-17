@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/bank/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account</title>
+</head>
+<body>
+    <span name="navbar">
+        <a name="navbar-item" href="/">Home</a>
+        <a name="navbar-item" href="/logout">Log Out</a>
+    </span>
+        <h1>Create Account</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Account">
+    </form>
+    <button onclick="location.href='/accounts/';">Back</button>
+</body>
+</html>

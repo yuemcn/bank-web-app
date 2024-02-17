@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/bank/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+</head>
+<body>
+    <span name="navbar">
+        <a name="navbar-item" href="/">Home</a>
+        <a name="navbar-item" href="/logout">Log Out</a>
+    </span>
+    <h1>Transactions</h1>
+    {% if transaction_list %}
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            {% for transaction in transaction_list %}
+                <tr>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.description }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>This account has no transactions.</p>
+    {% endif %}
+    <button onclick="history.back()">Back</button>
+</body>
+</html>
